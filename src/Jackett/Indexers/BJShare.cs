@@ -280,6 +280,9 @@ namespace Jackett.Indexers
                             }
 
                             release.Description = release.Description.Replace(" / Free", ""); // Remove Free Tag
+                            release.Description = release.Description.Replace("Full HD", "1080p"); // Replace for right quality
+                            release.Description = release.Description.Replace("/ HD / ", "/ 720p /"); // Replace for right quality
+                            release.Description = release.Description.Replace("4K", "2160p"); // Replace for right quality
                             release.Title += " " + release.Description; // add year and Description to the release Title to add some meaning to it
 
                             // check for previously stripped search terms
